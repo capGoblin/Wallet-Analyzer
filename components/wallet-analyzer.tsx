@@ -137,7 +137,7 @@ export default function WalletAnalyzer() {
       <header className="border-b border-neutral-200 dark:border-neutral-800">
         <div className="container flex h-16 items-center justify-between px-4">
           <h1 className="text-xl font-bold text-neutral-900 dark:text-neutral-50">
-            Wallet Analyzer AI Agent
+            Unleash Wallet Analyzer
           </h1>
           {isConnected ? (
             <div className="flex items-center gap-4">

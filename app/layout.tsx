@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Wallet Analyzer",
-  description: "Analyze cryptocurrency wallets with AI",
+  description: "Analyze cryptocurrency wallets with Unleash",
 };
 
 export default function RootLayout({
