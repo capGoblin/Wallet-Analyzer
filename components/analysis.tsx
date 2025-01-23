@@ -227,7 +227,7 @@ export default function Analysis({ walletAddress }: AnalysisProps) {
             <CardTitle className="text-neutral-900 dark:text-neutral-50">
               Token Price Predictions
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-neutral-500 dark:text-neutral-400">
               Estimated future prices for owned tokens
             </CardDescription>
           </CardHeader>
@@ -238,10 +238,11 @@ export default function Analysis({ walletAddress }: AnalysisProps) {
                   <XAxis
                     dataKey="date"
                     stroke="hsl(var(--primary-foreground))"
+                    tick={{ fill: "hsl(var(--primary-foreground))" }}
                   />
                   <YAxis
                     stroke="hsl(var(--primary-foreground))"
-                    tick={{ fill: "hsl(var(--primary))" }}
+                    tick={{ fill: "hsl(var(--primary-foreground))" }}
                   />
                   <Tooltip
                     contentStyle={{
@@ -278,13 +279,15 @@ export default function Analysis({ walletAddress }: AnalysisProps) {
             <CardTitle className="text-neutral-900 dark:text-neutral-50">
               NFT Analytics
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-neutral-500 dark:text-neutral-400">
               Comprehensive NFT activity overview
             </CardDescription>
           </CardHeader>
           <CardContent>
             {isLoading ? (
-              <p>Loading NFT data...</p>
+              <p className="text-neutral-900 dark:text-neutral-400">
+                Loading NFT data...
+              </p>
             ) : (
               <div className="space-y-6">
                 {/* NFT Activity Overview */}
@@ -353,22 +356,32 @@ export default function Analysis({ walletAddress }: AnalysisProps) {
             <CardTitle className="text-neutral-900 dark:text-neutral-50">
               Token Holdings
             </CardTitle>
-            <CardDescription>
+            <CardDescription className="text-neutral-500 dark:text-neutral-400">
               Current balance and value of owned tokens
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="overflow-x-auto">
               {isLoading ? (
-                <p>Loading wallet data...</p>
+                <p className="text-neutral-900 dark:text-neutral-400">
+                  Loading wallet data...
+                </p>
               ) : (
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-neutral-200 dark:border-neutral-800">
-                      <th className="text-left p-2">Token</th>
-                      <th className="text-right p-2">Balance</th>
-                      <th className="text-right p-2">Price</th>
-                      <th className="text-right p-2">Value</th>
+                      <th className="text-left p-2 text-neutral-900 dark:text-neutral-400">
+                        Token
+                      </th>
+                      <th className="text-right p-2 text-neutral-900 dark:text-neutral-400">
+                        Balance
+                      </th>
+                      <th className="text-right p-2 text-neutral-900 dark:text-neutral-400">
+                        Price
+                      </th>
+                      <th className="text-right p-2 text-neutral-900 dark:text-neutral-400">
+                        Value
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -377,25 +390,28 @@ export default function Analysis({ walletAddress }: AnalysisProps) {
                         key={token.symbol}
                         className="border-b border-neutral-200 dark:border-neutral-800"
                       >
-                        <td className="p-2">
+                        <td className="p-2 text-neutral-900 dark:text-neutral-300">
                           {token.name} ({token.symbol})
                         </td>
-                        <td className="text-right p-2">
+                        <td className="text-right p-2 text-neutral-900 dark:text-neutral-300">
                           {token.balance.toFixed(4)}
                         </td>
-                        <td className="text-right p-2">
+                        <td className="text-right p-2 text-neutral-900 dark:text-neutral-300">
                           ${token.price.toFixed(2)}
                         </td>
-                        <td className="text-right p-2">
+                        <td className="text-right p-2 text-neutral-900 dark:text-neutral-300">
                           ${token.value.toFixed(2)}
                         </td>
                       </tr>
                     ))}
                     <tr className="font-bold">
-                      <td colSpan={3} className="text-right p-2">
+                      <td
+                        colSpan={3}
+                        className="text-right p-2 text-neutral-900 dark:text-neutral-300"
+                      >
                         Estimated Net Worth:
                       </td>
-                      <td className="text-right p-2 text-neutral-900 dark:text-neutral-50">
+                      <td className="text-right p-2 text-neutral-900 dark:text-neutral-300">
                         ${totalValue.toFixed(2)}
                       </td>
                     </tr>

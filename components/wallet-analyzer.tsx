@@ -141,7 +141,7 @@ export default function WalletAnalyzer() {
           </h1>
           {isConnected ? (
             <div className="flex items-center gap-4">
-              <p className="text-sm text-neutral-500">
+              <p className="text-sm text-neutral-900 dark:text-neutral-300">
                 Connected: {connectedAddress?.slice(0, 6)}...
                 {connectedAddress?.slice(-4)}
               </p>
@@ -163,7 +163,7 @@ export default function WalletAnalyzer() {
           <>
             {searchedAddress && (
               <div className="mb-4 flex items-center justify-between bg-neutral-100 dark:bg-neutral-900 p-4 rounded-lg">
-                <p className="text-sm text-neutral-500">
+                <p className="text-sm text-neutral-900 dark:text-neutral-300">
                   Analyzing wallet: {searchedAddress.slice(0, 6)}...
                   {searchedAddress.slice(-4)}
                 </p>
@@ -174,6 +174,7 @@ export default function WalletAnalyzer() {
                     setShowAnalysis(false);
                     setAddress("");
                   }}
+                  className="text-neutral-900 dark:text-neutral-50"
                 >
                   Clear
                 </Button>
@@ -184,7 +185,7 @@ export default function WalletAnalyzer() {
         ) : (
           <motion.div className="flex flex-col items-center justify-center h-[calc(100vh-4rem)]">
             <h2 className="text-3xl font-bold text-neutral-900 mb-4 dark:text-neutral-50">
-              Welcome to Wallet Analyzer
+              Welcome to Unleash Wallet Analyzer
             </h2>
             <p className="text-xl text-center mb-8 text-neutral-900 dark:text-neutral-50">
               Connect your wallet or search an address to view analytics.
@@ -195,6 +196,7 @@ export default function WalletAnalyzer() {
                   placeholder="Enter wallet address..."
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
+                  className="text-neutral-900 dark:text-neutral-50 placeholder:text-neutral-500 dark:placeholder:text-neutral-400"
                 />
                 <Button onClick={handleSearchWallet}>
                   <Search className="h-4 w-4" />
@@ -202,7 +204,7 @@ export default function WalletAnalyzer() {
               </div>
             </div>
             {error && (
-              <motion.div className="mt-4 rounded-md bg-red-500/15 p-3">
+              <motion.div className="mt-4 rounded-md bg-red-500/15 p-3 text-red-500 dark:text-red-400">
                 {error}
               </motion.div>
             )}
